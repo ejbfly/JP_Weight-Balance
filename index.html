@@ -160,8 +160,8 @@
 
 var Components = {
     names: 	['EmptyPlane', 	'PilotWeight',	'InBoard',	'OutBoard', 'Batterieblei', 'Nasenblei_1',	'Nasenblei_2',	'Nasenblei_3', 	'Nasenblei_4', 	'Sauerstoff'],
-    lever: 	[586., 			-1000.,			50.,		50.,		-1500.,			-1800.,			-1800.,			-1800.,			-1800.,			1500.],
-	mass:  	[430.,			'VAR',			'VAR',		'VAR',		0.5,			1.5,			1.5,			1.5,			1.5,			1.5],
+    lever: 	[582., 			-496.,			180.,		265.,		-1250.,			-1770.,			-1770.,			-1770.,			-1770.,			880],
+	mass:  	[426.6,			'VAR',			'VAR',		'VAR',		1.0,			2.2,			4.35,			5.3,			2.75,			3.0],
 	active:	[1,				1,				1,			1,			'VAR',			'VAR',			'VAR',			'VAR',			'VAR',			'VAR'],
 	LDG:	[1,				1,				0,			0,			1,				1,				1,				1,				1,				1]
 };
@@ -218,10 +218,10 @@ var Components = {
 			}
 
 			var SP_TO = document.getElementById('SP_TO');     
-			SP_TO.innerHTML = TakeOffCoG.toFixed(0) + ' mm';
+			SP_TO.innerHTML = TakeOffCoG.toFixed(0) + ' mm /  ' + ((TakeOffCoG-270)/115.*100.).toFixed(0) + '%' ;
 		  
 			var SP_LDG = document.getElementById('SP_LDG');     
-			SP_LDG.innerHTML = LandingCoG.toFixed(0) + ' mm';
+			SP_LDG.innerHTML = LandingCoG.toFixed(0) + ' mm / '+ ((LandingCoG-270)/115.*100.).toFixed(0) + '%' ;
 		  
 			var M_TO = document.getElementById('M_TO');     
 			M_TO.innerHTML =  TakeOffMass.toFixed(1) +' kg';
@@ -244,9 +244,9 @@ var Components = {
  function setPilotWeight(name){
 		
 		if (name=='Brezn'){$('#PilotWeight').val(95);$('#PilotWeight').slider('refresh'); }
-		if (name=='Hacke'){$('#PilotWeight').val(65);$('#PilotWeight').slider('refresh'); }
-		if (name=='Ulle'){$('#PilotWeight').val(80);$('#PilotWeight').slider('refresh'); }
-		if (name=='Hulk'){$('#PilotWeight').val(95);$('#PilotWeight').slider('refresh'); }
+		if (name=='Hacke'){$('#PilotWeight').val(75);$('#PilotWeight').slider('refresh'); }
+		if (name=='Ulle'){$('#PilotWeight').val(83);$('#PilotWeight').slider('refresh'); }
+		if (name=='Hulk'){$('#PilotWeight').val(104);$('#PilotWeight').slider('refresh'); }
 		
 		computeWB();
  
